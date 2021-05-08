@@ -13,6 +13,14 @@ class Map extends React.Component{
     }
 
     render(){
+
+        const { lng, lat, zoom } = this.state;
+        const map = new mapboxgl.Map({
+          container: 'map-container',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [-122.486052, 37.830348],
+          zoom: 15
+        });
     return (
         <div>
         Hello
