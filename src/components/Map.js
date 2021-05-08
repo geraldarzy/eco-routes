@@ -21,6 +21,15 @@ class Map extends React.Component{
           center: [-122.486052, 37.830348],
           zoom: 15
         });
+        map.on('move', () => {
+            let h = map.getCenter();
+            console.log(h.lat.toFixed(4))
+            this.setState({
+              lng: map.getCenter().lng.toFixed(4),
+              lat: map.getCenter().lat.toFixed(4),
+              zoom: map.getZoom().toFixed(2)
+            });
+        });
     return (
         <div>
         Hello
