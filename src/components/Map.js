@@ -30,6 +30,43 @@ class Map extends React.Component{
               zoom: map.getZoom().toFixed(2)
             });
         });
+
+
+    //  ___________________________________________
+    fetch(url).then(resp=>resp.json()).then(json=>{
+
+        let coordinates = json.routes[0].geometry.coordinates;
+        // if(map.getSource){
+            //     map.removeLayer('route');
+            //     map.removeSource('route');
+            // }
+            map.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': coordinates
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#888',
+                    'line-width': 8
+                }
+            });
+        })
+        
+    //  ___________________________________________
     return (
         <div>
         Hello
