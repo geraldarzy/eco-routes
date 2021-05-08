@@ -1,4 +1,5 @@
 import React from 'react';
+import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 class Map extends React.Component{
     constructor(props){
@@ -6,10 +7,10 @@ class Map extends React.Component{
     }
 
     render(){
-        return (
-            <div>
-                Hello
-            </div>
+    return (
+        <div>
+        Hello
+        </div>
         )
     }
 }
