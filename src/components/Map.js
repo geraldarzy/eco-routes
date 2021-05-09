@@ -9,12 +9,11 @@ class Map extends React.Component{
             lat: 40.7410592,
             zoom: 12
           };
-          this.mapContainer = React.createRef();
     }
 
     render(){
-
         const { lng, lat, zoom } = this.state;
+        mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
         const map = new mapboxgl.Map({
           container: 'map-container',
           style: 'mapbox://styles/mapbox/streets-v11',
@@ -33,43 +32,42 @@ class Map extends React.Component{
 
 
     //  ___________________________________________
-    fetch(url).then(resp=>resp.json()).then(json=>{
+    // fetch(url).then(resp=>resp.json()).then(json=>{
 
-        let coordinates = json.routes[0].geometry.coordinates;
-        // if(map.getSource){
-            //     map.removeLayer('route');
-            //     map.removeSource('route');
-            // }
-            map.addSource('route', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': coordinates
-                    }
-                }
-            });
-            map.addLayer({
-                'id': 'route',
-                'type': 'line',
-                'source': 'route',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#888',
-                    'line-width': 8
-                }
-            });
-        })
+    //     let coordinates = json.routes[0].geometry.coordinates;
+    //     // if(map.getSource){
+    //         //     map.removeLayer('route');
+    //         //     map.removeSource('route');
+    //         // }
+    //         map.addSource('route', {
+    //             'type': 'geojson',
+    //             'data': {
+    //                 'type': 'Feature',
+    //                 'properties': {},
+    //                 'geometry': {
+    //                     'type': 'LineString',
+    //                     'coordinates': coordinates
+    //                 }
+    //             }
+    //         });
+    //         map.addLayer({
+    //             'id': 'route',
+    //             'type': 'line',
+    //             'source': 'route',
+    //             'layout': {
+    //                 'line-join': 'round',
+    //                 'line-cap': 'round'
+    //             },
+    //             'paint': {
+    //                 'line-color': '#888',
+    //                 'line-width': 8
+    //             }
+    //         });
+    //     })
         
     //  ___________________________________________
     return (
         <div>
-        Hello
         </div>
         )
     }
