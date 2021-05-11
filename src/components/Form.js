@@ -24,7 +24,19 @@ class Form extends React.Component{
     handleSubmit = (e) =>{
         e.preventDefault();
         //call API to turn names into coordinates
-       
+        console.log(`The Origin is ${this.state.origin} and the destination is ${this.state.destination}`)
+        //___________origin_______________________________________
+        let origin = this.state.origin.replace( / /g, '%20' );
+        let originurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + origin + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(originurl).then(resp=>resp.json()).then(json=>{
+            console.log(json.features[0].center);
+        })
+        //___________destination___________________________________
+        let destination = this.state.destination.replace( / /g, '%20' );
+        let destinationurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + destination + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(destinationurl).then(resp=>resp.json()).then(json=>{
+            console.log(json.features[0].center);
+        })
     }
     render(){
         return (
