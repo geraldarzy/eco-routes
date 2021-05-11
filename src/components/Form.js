@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {changeOrigin} from '../actions/changeOrigin';
+import {changeDestination} from '../actions/changeDestination';
 
 class Form extends React.Component{
     constructor(props){
@@ -53,4 +56,15 @@ class Form extends React.Component{
     }
 }
 
-export default Form;
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        changeOrigin:(origin)=>{
+            dispatch(changeOrigin(origin))
+        },
+        changeDestination:(destination)=>{
+            dispatch(changeDestination(destination))
+        }
+    }
+}
+
+export default connect(null,mapDispatchToProps)(Form);
