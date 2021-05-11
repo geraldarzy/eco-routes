@@ -7,6 +7,15 @@ class Form extends React.Component{
 
     render(){
 
+        return (
+            <form>
+                <label for='origin'>Origin:</label>
+                <input id='origin'type='text'></input>
+                <br/>
+                <label for='destination'>Destination:</label>
+                <input id='destination'type='text'></input>
+            </form>
+        )
     }
 }
 
