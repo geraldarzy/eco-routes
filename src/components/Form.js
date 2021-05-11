@@ -20,14 +20,22 @@ class Form extends React.Component{
         
         this.setState( stateObject );
     }
+
+    handleSubmit = (e) =>{
+        e.preventDefault();
+        //call API to turn names into coordinates
+       
+    }
     render(){
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label for='origin'>Origin:</label>
                 <input onChange={this.handleChange} id='origin'type='text'></input>
                 <br/>
                 <label for='destination'>Destination:</label>
                 <input onChange={this.handleChange} id='destination'type='text'></input>
+                <br/>
+                <input type='submit'/>
             </form>
         )
     }
