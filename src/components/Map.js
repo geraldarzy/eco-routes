@@ -32,18 +32,9 @@ class Map extends React.Component{
         // });
 
 
-    const sayHi=()=>{
-        console.log('hi from map component' + this.state.zoom)
-    }
 
     return (
         <div>
-            {/* <div className="sidebar">
-                Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-            </div> */}
-            {/* <button onClick={displayRoute}>h</button> */}
-            <button onClick={this.props.sayHello}>sayHi</button>
-
         </div>
         )
     }
@@ -51,8 +42,7 @@ class Map extends React.Component{
 
 const mapStateToProps=(state)=>{
     return{
-        origin:state.origin,
-        destination:state.destination
+        resp:state.resp
     }
 }
 
