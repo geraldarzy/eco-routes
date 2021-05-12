@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './Form'
+import {connect} from 'react-redux';
 
 class MapLogic extends React.Component{
 
@@ -73,4 +74,8 @@ class MapLogic extends React.Component{
     }
 }
 
-export default MapLogic;
+const mapDispatchToProps=()=>{
+    return{}
+}
+
+export default connect(null,mapDispatchToProps)(MapLogic);
