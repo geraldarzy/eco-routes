@@ -22,11 +22,22 @@ class MapLogic extends React.Component{
         this.setState( stateObject );
     }
 
+
+
+    handleSubmit=()=>{
+        //turn location names into coordinates
+        //use coordinates to fetch directions
+        //throw directions response into redux store
+    }
+
+    
+
     render(){
 
         return(
             <div>
                 <Form handleInputChange={this.handleInputChange}/>
+                <button onClick={this.handleSubmit}>Submit</button>
             </div>
         )
     }
