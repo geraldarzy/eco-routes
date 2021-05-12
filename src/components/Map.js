@@ -11,29 +11,29 @@ class Map extends React.Component{
             zoom: 10
           };
     }
+
     
     componentDidMount(){
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
         const { lng, lat, zoom } = this.state;
-        const map = new mapboxgl.Map({
+        this.map = new mapboxgl.Map({
             container: 'map-container',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [lng, lat],
             zoom: zoom
-          });
-          map.on('move', () => {
-              let h = map.getCenter();
-              console.log(h.lat.toFixed(4))
+        });
+        this.map.on('move', () => {
               this.setState({
-                lng: map.getCenter().lng.toFixed(4),
-                lat: map.getCenter().lat.toFixed(4),
-                zoom: map.getZoom().toFixed(2)
+                lng: this.map.getCenter().lng.toFixed(4),
+                lat: this.map.getCenter().lat.toFixed(4),
+                zoom: this.map.getZoom().toFixed(2)
               });
-          });
+        });
+      
     }
     render(){
- 
 
+        
     return (
         <div id='map-container' class='map-container'>
 
