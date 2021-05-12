@@ -22,7 +22,25 @@ class MapLogic extends React.Component{
         this.setState( stateObject );
     }
 
+    locationToCoordinates = () =>{
+        //turn spaces into '%20' as per API URL 
 
+         //___________origin_______________________________________
+        let origin = this.state.origin.replace( / /g, '%20' );
+        let originurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + origin + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(originurl).then(resp=>resp.json()).then(json=>{
+            console.log(json.features[0].center);
+            this.props.changeOrigin(json.features[0].center)
+        })
+
+        //___________destination___________________________________
+        let destination = this.state.destination.replace( / /g, '%20' );
+        let destinationurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + destination + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(destinationurl).then(resp=>resp.json()).then(json=>{
+            console.log(json.features[0].center);
+            this.props.changeDestination(json.features[0].center)
+        })
+    }
 
     handleSubmit=()=>{
         //turn location names into coordinates
