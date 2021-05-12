@@ -46,6 +46,14 @@ class MapLogic extends React.Component{
         })
     }
 
+    fetchDirections=()=>{
+        let url = `https://api.mapbox.com/directions/v5/mapbox/driving/${state.origin_coordinates[0]},${state.origin_coordinates[1]};${state.destination_coordinates[0]},${state.destination_coordinates[1]}?geometries=geojson&access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(url).then(resp=>resp.json()).then(json=>{
+            // let geojson_coordinates = json.routes[0].geometry.coordinates;
+            //send this JSON to redux store
+        })
+    }
+
     handleSubmit=()=>{
         //turn location names into coordinates
         //use coordinates to fetch directions
