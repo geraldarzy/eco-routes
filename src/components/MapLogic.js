@@ -53,6 +53,7 @@ class MapLogic extends React.Component{
         fetch(url).then(resp=>resp.json()).then(json=>{
             // let geojson_coordinates = json.routes[0].geometry.coordinates;
             //send this JSON to redux store
+            this.props.sendResponse(resp);
         })
     }
 
