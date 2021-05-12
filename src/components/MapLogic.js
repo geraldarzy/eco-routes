@@ -58,7 +58,7 @@ class MapLogic extends React.Component{
               })
           })
 
-          
+
         //use coordinates to fetch directions -done
         //throw directions response into redux store -done in fetchDirection
         this.fetchDirections();
@@ -69,7 +69,7 @@ class MapLogic extends React.Component{
     render(){
 
         return(
-            <div>
+            <div className='center-items-inside'>
                 <Form handleInputChange={this.handleInputChange}/>
                 <Button variant='success' onClick={this.handleSubmit}>Submit</Button>
             </div>
