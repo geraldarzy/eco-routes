@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './Form'
 import {connect} from 'react-redux';
+import {sendResponse} from '../actions/sendResponse'
 
 class MapLogic extends React.Component{
 
@@ -74,8 +75,12 @@ class MapLogic extends React.Component{
     }
 }
 
-const mapDispatchToProps=()=>{
-    return{}
+const mapDispatchToProps=(dispatch)=>{
+    return{
+        sendResponse:(resp)=>{
+            dispatch(sendResponse(resp))
+        }
+    }
 }
 
 export default connect(null,mapDispatchToProps)(MapLogic);
