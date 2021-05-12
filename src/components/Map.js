@@ -68,7 +68,9 @@ class Map extends React.Component{
                     'line-color':'#888',
                     'line-width':8
                 }
-            })
+            });
+            // this.props.resp.waypoints contains the origin and destination coordinates along street names and other things
+            this.map.fitBounds([this.props.resp.waypoints[0].location,this.props.resp.waypoints[1].location])
         }
 
     return (
