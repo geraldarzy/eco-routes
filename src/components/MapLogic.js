@@ -10,7 +10,12 @@ class MapLogic extends React.Component{
             destination: ''
         }
     }
-
+    handleInputChange=(origin,destination)=>{
+        this.setState({
+            origin:origin,
+            destination:destination
+        });
+    }
 
     render(){
 
