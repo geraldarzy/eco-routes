@@ -2,6 +2,8 @@ import React from 'react';
 import Form from './Form'
 import {connect} from 'react-redux';
 import {sendResponse} from '../actions/sendResponse'
+import {Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class MapLogic extends React.Component{
 
@@ -69,7 +71,7 @@ class MapLogic extends React.Component{
         return(
             <div>
                 <Form handleInputChange={this.handleInputChange}/>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <Button variant='success' onClick={this.handleSubmit}>Submit</Button>
             </div>
         )
     }
