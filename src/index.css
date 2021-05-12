@@ -19,8 +19,9 @@ code {
   right: 0;
   left: 0;
   bottom: 0;
-  width: 400px;
-  height: 300px;
+  width: 30rem;
+  min-height: 100%;
+  min-width: 100%;
   }
   .sidebar {
     background-color: rgba(35, 55, 75, 0.9);
