@@ -11,16 +11,27 @@ function App() {
     <div className="App App-header">
       <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
         <Card.Body>
-          <MapLogic/>
+
+          <Card>
+            <Card.Body>
+              < MapLogic/>             
+            </Card.Body>
+          </Card>
+
+          <Card>
+            <Card.Body>
+              <CarbonFootprintLogic/>
+            </Card.Body>
+          </Card>
+          
         </Card.Body>
       </Card>
 
-      <Card className='center-items-inside' style={{width:'60rem', height:'80vh', margin:'1rem'}}>
+      <Card className='center-items-inside' style={{width:'55rem', height:'80vh', margin:'1rem'}}>
         <Card.Body className='center-items-inside'>
           <Map/>
         </Card.Body>
       </Card>
-      <CarbonFootprintLogic/>
     </div>
   );
 }
