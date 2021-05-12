@@ -3,6 +3,14 @@ import {connect} from 'react-redux';
 
 class CarbonFootprintLogic extends React.Component{
 
+
+    render(){
+        return(
+            <div>
+
+            </div>
+        )
+    }
 }
 
 const mapStateToProps=(state)=>{
