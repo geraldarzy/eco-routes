@@ -7,7 +7,9 @@ class MapLogic extends React.Component{
         super();
         this.state={
             origin: '',
-            destination: ''
+            destination: '',
+            origin_coordinates:'',
+            destination_coordinates:''
         }
     }
     handleInputChange=(e)=>{
