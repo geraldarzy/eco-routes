@@ -2,13 +2,24 @@
 import './App.css';
 import Map from './components/Map'
 import MapLogic from './components/MapLogic';
-import CarbonFootprintLogic from './components/CarbonFootprintLogic'
+import CarbonFootprintLogic from './components/CarbonFootprintLogic';
+import {Card} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App App-header">
-      <MapLogic/>
-      <Map/>
+      <Card style={{width:'35rem', height:'80vh',margin:'1rem'}}>
+        <Card.Body>
+          <MapLogic/>
+        </Card.Body>
+      </Card>
+
+      <Card style={{width:'60rem', height:'80vh', margin:'1rem'}}>
+        <Card.Body>
+          <Map/>
+        </Card.Body>
+      </Card>
       <CarbonFootprintLogic/>
     </div>
   );
