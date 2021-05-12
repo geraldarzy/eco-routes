@@ -21,7 +21,7 @@ class MapLogic extends React.Component{
 
         return(
             <div>
-                <Form/>
+                <Form handleInputChange={this.handleInputChange}/>
             </div>
         )
     }
