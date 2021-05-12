@@ -42,15 +42,14 @@ class Form extends React.Component{
     // }
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div>
                 <label for='origin'>Origin:</label>
                 <input onChange={this.handleChange} id='origin'type='text'></input>
                 <br/>
                 <label for='destination'>Destination:</label>
                 <input onChange={this.handleChange} id='destination'type='text'></input>
                 <br/>
-                <input type='submit'/>
-            </form>
+            </div>
         )
     }
 }
