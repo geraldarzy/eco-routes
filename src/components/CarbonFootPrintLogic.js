@@ -14,14 +14,15 @@ class CarbonFootprintLogic extends React.Component{
     }
 
     render(){
+        let x = `What's the size of your carbon foot print?`;
         if(this.props.resp){
             let dist = this.props.resp.routes[0].distance
             let co2_produced = this.calculateCarbonFootprint(25,dist)
-            console.log(co2_produced+' lbs of co2 produced')
+            x = co2_produced+' lbs of co2 produced';
         }
         return(
             <div>
-                
+                {x}
             </div>
         )
     }
