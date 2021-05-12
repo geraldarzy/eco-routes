@@ -9,14 +9,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <div className="App App-header">
-      <Card style={{width:'35rem', height:'80vh',margin:'1rem'}}>
+      <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
         <Card.Body>
           <MapLogic/>
         </Card.Body>
       </Card>
 
-      <Card style={{width:'60rem', height:'80vh', margin:'1rem'}}>
-        <Card.Body>
+      <Card className='center-items-inside' style={{width:'60rem', height:'80vh', margin:'1rem'}}>
+        <Card.Body className='center-items-inside'>
           <Map/>
         </Card.Body>
       </Card>
