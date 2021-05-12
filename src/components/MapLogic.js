@@ -58,9 +58,11 @@ class MapLogic extends React.Component{
     }
 
     handleSubmit=()=>{
-        //turn location names into coordinates
-        //use coordinates to fetch directions
-        //throw directions response into redux store
+        //turn location names into coordinates -done
+        //use coordinates to fetch directions -done
+        //throw directions response into redux store -done in fetchDirection
+        this.locationToCoordinates();
+        this.fetchDirections();
     }
 
     
