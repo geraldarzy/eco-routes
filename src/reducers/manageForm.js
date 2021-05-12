@@ -2,7 +2,7 @@ function manageForm(
     state={
         oirigin:'',
         destination:'',
-        resp={}
+        resp:{}
     }, action
 ) {
     switch (action.type){
