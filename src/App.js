@@ -1,13 +1,15 @@
 
 import './App.css';
 import Map from './components/Map'
-import MapLogic from './components/MapLogic'
+import MapLogic from './components/MapLogic';
+import CarbonFootprintLogic from './components/CarbonFootprintLogic'
 
 function App() {
   return (
     <div className="App App-header">
       <MapLogic/>
       <Map/>
+      <CarbonFootprintLogic/>
     </div>
   );
 }
