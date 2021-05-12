@@ -1,7 +1,8 @@
 function manageForm(
     state={
         oirigin:'',
-        destination:''
+        destination:'',
+        resp={}
     }, action
 ) {
     switch (action.type){
@@ -9,13 +10,22 @@ function manageForm(
             return{
                 ...state,
                 origin: action.origin,
-                destination: state.destination
+                destination: state.destination,
+                resp:state.resp
             }
         case 'CHANGE_DESTINATION':
             return{
                 ...state,
                 origin: state.origin,
-                destination: action.destination
+                destination: action.destination,
+                resp:state.resp
+            }
+        case 'SEND_RESPONSE':
+            return{
+                ...state,
+                origin: state.origin,
+                destination: state.destination,
+                resp:action.resp
             }
 
         default:
