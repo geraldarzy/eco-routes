@@ -2,7 +2,7 @@ function reducer(
     state={
         oirigin:'',
         destination:'',
-        resp:{}
+        resp:null
     }, action
 ) {
     switch (action.type){
