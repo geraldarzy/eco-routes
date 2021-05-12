@@ -44,10 +44,10 @@ class Form extends React.Component{
         return (
             <div>
                 <label for='origin'>Origin:</label>
-                <input onChange={this.handleChange} id='origin'type='text'></input>
+                <input onChange={this.props.handleInputChange} id='origin'type='text'></input>
                 <br/>
                 <label for='destination'>Destination:</label>
-                <input onChange={this.handleChange} id='destination'type='text'></input>
+                <input onChange={this.props.handleInputChange} id='destination'type='text'></input>
                 <br/>
             </div>
         )
