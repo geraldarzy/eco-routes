@@ -41,11 +41,9 @@ class Form extends React.Component{
     render(){
         return (
             <div>
-                <label for='origin'>Origin:</label>
-                <input onChange={this.props.handleInputChange} id='origin'type='text'></input>
+                <input onChange={this.props.handleInputChange} id='origin'type='text' placeholder='Origin'></input>
                 <br/>
-                <label for='destination'>Destination:</label>
-                <input onChange={this.props.handleInputChange} id='destination'type='text'></input>
+                <input onChange={this.props.handleInputChange} id='destination'type='text' placeholder='Destination'></input>
                 <br/>
             </div>
         )
