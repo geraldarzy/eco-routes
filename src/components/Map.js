@@ -70,7 +70,7 @@ class Map extends React.Component{
                 }
             });
             // this.props.resp.waypoints contains the origin and destination coordinates along street names and other things
-            this.map.fitBounds([this.props.resp.waypoints[0].location,this.props.resp.waypoints[1].location])
+            this.map.fitBounds([this.props.resp.waypoints[0].location,this.props.resp.waypoints[1].location],{padding:50})
         }
 
     return (
