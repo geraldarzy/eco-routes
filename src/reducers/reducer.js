@@ -1,4 +1,4 @@
-function manageForm(
+function reducer(
     state={
         oirigin:'',
         destination:'',
@@ -19,4 +19,4 @@ function manageForm(
         }
 }
 
-export default manageForm;
+export default reducer;

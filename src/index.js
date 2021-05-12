@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import manageForm from './reducers/manageForm'
 
-const store = createStore(manageForm, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>
