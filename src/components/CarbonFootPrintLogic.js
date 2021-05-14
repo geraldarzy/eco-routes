@@ -19,6 +19,7 @@ class CarbonFootprintLogic extends React.Component{
             let dist = this.props.resp.routes[0].distance
             let co2_produced = this.calculateCarbonFootprint(25,dist)
             x = co2_produced+' lbs of co2 produced';
+            x = `Here is the most eco-friendly route you can take for your trip. It emits ` + co2_produced.toFixed(2) + `lbs of carbon-dioxide into the environment`;
         }
         return(
             <div>
