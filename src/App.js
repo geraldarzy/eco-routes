@@ -5,11 +5,11 @@ import MapLogic from './components/MapLogic';
 import CarbonFootprintLogic from './components/CarbonFootprintLogic';
 import {Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, useHistory} from 'react-router-dom';
 
 function App() {
 
-
+  const history = useHistory();
 
   return (
     
@@ -42,7 +42,9 @@ function App() {
         </Route>
         <Route exact path='/'>
           <div>Hello</div>
-
+          <button onClick={()=>{
+            history.push('/trial')
+          }} >go to map</button>
         </Route>
       </Switch>
     </div>
