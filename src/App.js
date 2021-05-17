@@ -5,33 +5,46 @@ import MapLogic from './components/MapLogic';
 import CarbonFootprintLogic from './components/CarbonFootprintLogic';
 import {Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Switch, Route} from 'react-router-dom';
 
 function App() {
+
+
+
   return (
+    
     <div className="App App-header">
-      <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
-        <Card.Body>
-
-          <Card>
+      <Switch>
+        <Route exact path='/trial'>
+          <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
             <Card.Body>
-              < MapLogic/>             
+
+              <Card>
+                <Card.Body>
+                  < MapLogic/>             
+                </Card.Body>
+              </Card>
+
+              <Card>
+                <Card.Body>
+                  <CarbonFootprintLogic/>
+                </Card.Body>
+              </Card>
+              
             </Card.Body>
           </Card>
 
-          <Card>
-            <Card.Body>
-              <CarbonFootprintLogic/>
+          <Card className='center-items-inside' style={{width:'55rem', height:'80vh', margin:'1rem'}}>
+            <Card.Body className='center-items-inside'>
+              <Map/>
             </Card.Body>
           </Card>
-          
-        </Card.Body>
-      </Card>
+        </Route>
+        <Route exact path='/'>
+          <div>Hello</div>
 
-      <Card className='center-items-inside' style={{width:'55rem', height:'80vh', margin:'1rem'}}>
-        <Card.Body className='center-items-inside'>
-          <Map/>
-        </Card.Body>
-      </Card>
+        </Route>
+      </Switch>
     </div>
   );
 }
