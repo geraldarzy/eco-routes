@@ -21,13 +21,7 @@ class CarbonFootprintLogic extends React.Component{
     }
 
     handleComparisonClick=(e)=>{
-        let stateObject = function() {
-            let obj = {};
-            obj[e.target.id] = e.target.value;
-            return obj;
-        }
-        
-        this.setState( stateObject );
+        this.setState( { comparison:e.target.id } );
     }
 
     render(){
