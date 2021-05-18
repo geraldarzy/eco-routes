@@ -2,6 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 class CarbonFootprintLogic extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            
+        }
+    }
     calculateCarbonFootprint=(mpg=25,dist)=>{
         // dist is in meters, mpg is in miles
         // so first convers dist from meters to miles
