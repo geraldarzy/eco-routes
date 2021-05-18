@@ -46,8 +46,7 @@ function App() {
             <br/>
             <button id='foot-button' onClick={()=>{
               history.push('/trial')
-            }} style={{background:'none',border:'none'}} >
-              
+            }} style={{background:'none',border:'none'}} ><img src='http://www.clker.com/cliparts/c/u/4/9/j/S/green-footprint-hi.png' style={{height:'auto',width:'50px'}}/>
             </button>
             <br/>
             <label for='foot-button'>Start Now</label>
