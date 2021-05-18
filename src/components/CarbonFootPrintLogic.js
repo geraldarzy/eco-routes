@@ -6,7 +6,7 @@ class CarbonFootprintLogic extends React.Component{
     constructor(){
         super();
         this.state={
-            comparisons:null
+            comparison:null
         }
     }
     calculateCarbonFootprint=(mpg=25,dist)=>{
@@ -44,7 +44,7 @@ class CarbonFootprintLogic extends React.Component{
                     <button id='avgPerson' onClick={this.handleComparisonClick}>Avg Person</button>
                     <button id='pet' onClick={this.handleComparisonClick} >Pets</button>
                     <button id='america' onClick={this.handleComparisonClick} >America</button>
-                    <Comparisons/>
+                    <Comparisons compare={this.state.comparison}/>
                 </div>
             )
         }
