@@ -1,4 +1,7 @@
 import React from 'react';
+import AvgPerson from './compareAvgPerson'
+import Pet from './comparePet'
+import America from './compareAmerica'
 
 class Comparisons extends React.Component{
 
@@ -14,20 +17,20 @@ class Comparisons extends React.Component{
             case 'avgPerson':
                 return(
                     <div>
-                        compare w avgperson
+                        <AvgPerson/>
                     </div>
                 )
                 
             case 'pet':
                 return(
                     <div>
-                        compare w pets
+                        <Pet/>
                     </div>
                 )
             case 'america':
                 return(
                     <div>
-                        compare w america
+                        <America/>
                     </div>
                 )
 
