@@ -5,7 +5,7 @@ class CarbonFootprintLogic extends React.Component{
     constructor(){
         super();
         this.state={
-            
+
         }
     }
     calculateCarbonFootprint=(mpg=25,dist)=>{
@@ -20,16 +20,19 @@ class CarbonFootprintLogic extends React.Component{
     }
 
     render(){
-        let x = `What's the size of your carbon foot print?`;
         if(this.props.resp){
+            //^^ if there is a response show the math 
             let dist = this.props.resp.routes[0].distance
             let co2_produced = this.calculateCarbonFootprint(25,dist)
-            x = co2_produced+' lbs of co2 produced';
-            x = `Here is the most eco-friendly route you can take for your trip. It emits ` + co2_produced.toFixed(2) + `lbs of carbon-dioxide into the environment`;
+            return(
+                <div>
+                    Here is the most eco-friendly route you can take for your trip. It emits {co2_produced.toFixed(2)} lbs of carbon-dioxide into the environment
+                </div>
+            )
         }
         return(
             <div>
-                {x}
+                What's the size of your carbon foot print?
             </div>
         )
     }
