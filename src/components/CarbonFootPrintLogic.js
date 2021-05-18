@@ -37,7 +37,7 @@ class CarbonFootprintLogic extends React.Component{
                     <br/>
                     <button id='avgPerson' onClick={this.handleComparisonClick}>Avg Person</button>
                     <button id='pet' onClick={this.handleComparisonClick} >Pets</button>
-                    <button id='america' onClick={this.handleComparisonClick} >America</button>
+
                     <Comparisons tripCo2={co2_produced} compare={this.state.comparison}/>
                 </div>
             )
