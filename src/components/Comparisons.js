@@ -17,20 +17,20 @@ class Comparisons extends React.Component{
             case 'avgPerson':
                 return(
                     <div>
-                        <AvgPerson/>
+                        <AvgPerson tripCo2={this.props.tripCo2}/>
                     </div>
                 )
                 
             case 'pet':
                 return(
                     <div>
-                        <Pet/>
+                        <Pet tripCo2={this.props.tripCo2}/>
                     </div>
                 )
             case 'america':
                 return(
                     <div>
-                        <America/>
+                        <America tripCo2={this.props.tripCo2}/>
                     </div>
                 )
 
