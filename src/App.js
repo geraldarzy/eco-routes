@@ -13,38 +13,46 @@ function App() {
 
   return (
     
-    <div className="App App-header">
+    <div className="App App-header ">
       <Switch>
         <Route exact path='/trial'>
-          <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
-            <Card.Body>
+            <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
+              <Card.Body>
 
-              <Card>
-                <Card.Body>
-                  < MapLogic/>             
-                </Card.Body>
-              </Card>
+                <Card>
+                  <Card.Body>
+                    < MapLogic/>             
+                  </Card.Body>
+                </Card>
 
-              <Card>
-                <Card.Body>
-                  <CarbonFootprintLogic/>
-                </Card.Body>
-              </Card>
-              
-            </Card.Body>
-          </Card>
+                <Card>
+                  <Card.Body>
+                    <CarbonFootprintLogic/>
+                  </Card.Body>
+                </Card>
+                
+              </Card.Body>
+            </Card>
 
-          <Card className='center-items-inside' style={{width:'55rem', height:'80vh', margin:'1rem'}}>
-            <Card.Body className='center-items-inside'>
-              <Map/>
-            </Card.Body>
-          </Card>
+            <Card className='center-items-inside' style={{width:'55rem', height:'80vh', margin:'1rem'}}>
+              <Card.Body className='center-items-inside'>
+                <Map/>
+              </Card.Body>
+            </Card>
         </Route>
         <Route exact path='/'>
-          <div>Hello</div>
-          <button onClick={()=>{
-            history.push('/trial')
-          }} >go to map</button>
+          <div className='center-items-inside'>
+            <div >Welcome to Eco-Routes</div>
+            <br/>
+            <button id='foot-button' onClick={()=>{
+              history.push('/trial')
+            }} style={{background:'none',border:'none'}} >
+              
+            </button>
+            <br/>
+            <label for='foot-button'>Start Now</label>
+            
+          </div>
         </Route>
       </Switch>
     </div>
