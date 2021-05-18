@@ -5,7 +5,7 @@ class CarbonFootprintLogic extends React.Component{
     constructor(){
         super();
         this.state={
-
+            comparisons:null
         }
     }
     calculateCarbonFootprint=(mpg=25,dist)=>{
@@ -19,6 +19,16 @@ class CarbonFootprintLogic extends React.Component{
         return co2_produced;
     }
 
+    handleComparisonClick=(e)=>{
+        let stateObject = function() {
+            let obj = {};
+            obj[e.target.id] = e.target.value;
+            return obj;
+        }
+        
+        this.setState( stateObject );
+    }
+
     render(){
         if(this.props.resp){
             //^^ if there is a response show the math 
@@ -26,7 +36,13 @@ class CarbonFootprintLogic extends React.Component{
             let co2_produced = this.calculateCarbonFootprint(25,dist)
             return(
                 <div>
-                    Here is the most eco-friendly route you can take for your trip. It emits {co2_produced.toFixed(2)} lbs of carbon-dioxide into the environment
+                    <div>
+                        Here is the most eco-friendly route you can take for your trip. It emits {co2_produced.toFixed(2)} lbs of carbon-dioxide into the environment
+                    </div>
+                    <br/>
+                    <button id='avgPerson' onClick={this.handleComparisonClick}>Avg Person</button>
+                    <button id='pet' onClick={this.handleComparisonClick} >Pets</button>
+                    <button id='america' onClick={this.handleComparisonClick} >America</button>
                 </div>
             )
         }
