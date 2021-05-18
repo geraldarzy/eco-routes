@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Comparisons from './Comparisons'
 
 class CarbonFootprintLogic extends React.Component{
     constructor(){
@@ -43,6 +44,7 @@ class CarbonFootprintLogic extends React.Component{
                     <button id='avgPerson' onClick={this.handleComparisonClick}>Avg Person</button>
                     <button id='pet' onClick={this.handleComparisonClick} >Pets</button>
                     <button id='america' onClick={this.handleComparisonClick} >America</button>
+                    <Comparisons/>
                 </div>
             )
         }
