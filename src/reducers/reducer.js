@@ -1,6 +1,6 @@
 function reducer(
     state={
-        oirigin:'',
+        origin:'',
         destination:'',
         resp:null,
         currentUser:null
