@@ -81,13 +81,13 @@ function App() {
         </Route>
         <Route exact path='/user/sign-up'>
             <div>
-              <UserSignUp/>
+              <UserSignUp history={history} setCurrentUser={setCurrentUser}/>
             </div>
         </Route>
 
         <Route exact path='/user/sign-in'>
             <div>
-              <UserSignIn/>
+              <UserSignIn history={history} setCurrentUser={setCurrentUser}/>
             </div>
         </Route>
       </Switch>
