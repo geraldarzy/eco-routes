@@ -57,6 +57,17 @@ function App() {
             
           </div>
         </Route>
+        <Route exact path='/user/sign-up'>
+            <div>
+              sign up here
+            </div>
+        </Route>
+
+        <Route exact path='/user/sign-in'>
+            <div>
+              sign in here
+            </div>
+        </Route>
       </Switch>
     </div>
   );
