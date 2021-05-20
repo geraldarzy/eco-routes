@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {setCurrentUser} from '../actions/setCurrentUser'
 
 class UserSignIn extends React.Component{
 
@@ -60,4 +62,12 @@ class UserSignIn extends React.Component{
     }
 }
 
-export default UserSignIn;
+const mapDispatchToProps=(dispatch)=>{
+  return{
+      setCurrentUser:(user)=>{
+          dispatch(setCurrentUser(user))
+      }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(UserSignIn);
