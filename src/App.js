@@ -8,13 +8,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Switch, Route, useHistory} from 'react-router-dom';
 import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
+import { useSelector, useDispatch } from 'react-redux';
+import {setCurrentUser} from './actions/setCurrentUser'
 
 function App() {
 
-  const [currentUser,setCurrentUser] = useState(null);
-
+  const currentUser = useSelector(state=>state.currentUser)
+  const dispatch = useDispatch();
+  
   const history = useHistory();
-
   useEffect(() => {
     // TODO: check if there'a token for the logged in user
     // GET /me
@@ -28,7 +30,7 @@ function App() {
         .then((r) => r.json())
         .then((user) => {
           // set the user in state
-          setCurrentUser(user);
+          dispatch(setCurrentUser(user));
         });
     }
   }, []);
@@ -81,13 +83,13 @@ function App() {
         </Route>
         <Route exact path='/user/sign-up'>
             <div>
-              <UserSignUp history={history} setCurrentUser={setCurrentUser}/>
+              <UserSignUp history={history}/>
             </div>
         </Route>
 
         <Route exact path='/user/sign-in'>
             <div>
-              <UserSignIn history={history} setCurrentUser={setCurrentUser}/>
+              <UserSignIn history={history}/>
             </div>
         </Route>
       </Switch>
