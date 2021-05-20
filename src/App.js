@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Switch, Route, useHistory} from 'react-router-dom';
 import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
+import TripBook from './components/TripBook'
 
 function App() {
   const history = useHistory();
@@ -16,6 +17,9 @@ function App() {
     
     <div className="App App-header ">
       <Switch>
+        <Route exact path='/trips'>
+          <TripBook/>
+        </Route>
         <Route exact path='/trial'>
             <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
               <Card.Body>
