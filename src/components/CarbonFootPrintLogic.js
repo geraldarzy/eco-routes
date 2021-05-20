@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Comparisons from './Comparisons'
+import MemberAccess from './MemberAccess';
 
 class CarbonFootprintLogic extends React.Component{
     constructor(){
@@ -39,6 +40,7 @@ class CarbonFootprintLogic extends React.Component{
                     <button id='pet' onClick={this.handleComparisonClick} >Pets</button>
 
                     <Comparisons tripCo2={co2_produced} compare={this.state.comparison}/>
+                    <MemberAccess/>
                 </div>
             )
         }
