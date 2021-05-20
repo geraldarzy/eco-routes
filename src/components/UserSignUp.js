@@ -9,8 +9,34 @@ class UserSignUp extends React.Component{
         e.preventDefault();
         let email = e.target.children.email.value;
         let password = e.target.children.password.value;
-        let password_confirmation = e.target.children.password_confirmation.value;
+        fetch("http://localhost:3000/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({email: email, password: password}),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (data.errors) {
+              // set errors to show errors in the form
+              this.setState({errors:data.errors})
+            } else {
+              // use the response to set state
+              const { user, token } = data;
+    
+              localStorage.setItem("token", token);
+    
+              this.props.setCurrentUser(user);
+              this.props.history.push("/");
+            }
+          });
     }
+
+   
+
+
+
 
     render(){
         return(
