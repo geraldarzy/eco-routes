@@ -13,27 +13,10 @@ import {setCurrentUser} from './actions/setCurrentUser'
 
 function App() {
 
-  const currentUser = useSelector(state=>state.currentUser)
+
   const dispatch = useDispatch();
-  
+
   const history = useHistory();
-  useEffect(() => {
-    // TODO: check if there'a token for the logged in user
-    // GET /me
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch("http://localhost:3000/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-        .then((r) => r.json())
-        .then((user) => {
-          // set the user in state
-          dispatch(setCurrentUser(user));
-        });
-    }
-  }, []);
 
   return (
     
