@@ -27,7 +27,8 @@ class MemberAccess extends React.Component{
         if(this.props.currentUser){
             return(
                 <div>
-                    hello signed in
+                    <p>Add this trip to your 'Trips' to keep track of your carbon footprint.</p>
+                    <button>Add Trip</button>
                 </div>
             )
         }
