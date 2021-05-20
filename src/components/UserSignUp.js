@@ -46,8 +46,6 @@ class UserSignUp extends React.Component{
                     <br/>
                     <input type='password' id='password' placeholder='Password'></input>
                     <br/>
-                    <input type='password' id='password_confirmation' placeholder='Password Confirmation'></input>
-                    <br/>
                     <input type='submit'></input>
                 </form>
             </div>
