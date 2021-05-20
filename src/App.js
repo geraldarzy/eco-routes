@@ -8,14 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Switch, Route, useHistory} from 'react-router-dom';
 import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
-import { useSelector, useDispatch } from 'react-redux';
-import {setCurrentUser} from './actions/setCurrentUser'
 
 function App() {
-
-
-  const dispatch = useDispatch();
-
   const history = useHistory();
 
   return (
