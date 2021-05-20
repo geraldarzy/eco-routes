@@ -14,6 +14,7 @@ class Map extends React.Component{
 
     
     componentDidMount(){
+        //this key is restricted on mapbox website, the key that should be hidden is the key that can fetch directions
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
         const { lng, lat, zoom } = this.state;
         this.map = new mapboxgl.Map({
