@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setCurrentUser} from '../actions/setCurrentUser'
+import {setCurrentUser} from '../actions/setCurrentUser';
 
 class MemberAccess extends React.Component{
 
@@ -33,7 +33,8 @@ class MemberAccess extends React.Component{
         }
         return (
             <div>
-                hello not signed in
+                <p>Want to keep track of your carbon footprint? Sign In Now!</p>
+                <button>Sign In</button>
             </div>
             )
     }
