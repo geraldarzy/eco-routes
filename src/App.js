@@ -50,6 +50,10 @@ function App() {
             </button>
             <br/>
             <label for='foot-button'>Start Now</label>
+            <br/>
+            <br/>
+            <button onClick={()=>{history.push('/user/sign-up')}}>Sign Up</button>
+            <button onClick={()=>{history.push('/user/sign-in')}}>Log In</button>
             
           </div>
         </Route>
