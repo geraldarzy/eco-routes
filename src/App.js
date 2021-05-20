@@ -1,4 +1,4 @@
-
+import {useState} from 'react';
 import './App.css';
 import Map from './components/Map'
 import MapLogic from './components/MapLogic';
@@ -10,6 +10,8 @@ import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
 
 function App() {
+
+  const [currentUser,setCurrentUser] = useState(null);
 
   const history = useHistory();
 
