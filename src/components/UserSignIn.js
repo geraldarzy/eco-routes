@@ -14,7 +14,7 @@ class UserSignIn extends React.Component{
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' id='email' placeholder='Email'></input>
                     <br/>
-                    <input type='text' id='password' placeholder='Password'></input>
+                    <input type='password' id='password' placeholder='Password'></input>
                     <br/>
                     <input type='submit'></input>
                 </form>

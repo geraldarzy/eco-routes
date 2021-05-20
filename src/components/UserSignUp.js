@@ -18,9 +18,9 @@ class UserSignUp extends React.Component{
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' id='email' placeholder='Email'></input>
                     <br/>
-                    <input type='text' id='password' placeholder='Password'></input>
+                    <input type='password' id='password' placeholder='Password'></input>
                     <br/>
-                    <input type='text' id='password_confirmation' placeholder='Password Confirmation'></input>
+                    <input type='password' id='password_confirmation' placeholder='Password Confirmation'></input>
                     <br/>
                     <input type='submit'></input>
                 </form>
