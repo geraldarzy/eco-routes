@@ -2,6 +2,17 @@ import React from 'react';
 
 class UserSignIn extends React.Component{
 
+    constructor(){
+        super();
+
+        this.state={
+          errors: []
+        }
+    }
+
+
+
+
     handleSubmit=(e)=>{
         e.preventDefault();
         let email = e.target.children.email.value;
@@ -41,6 +52,8 @@ class UserSignIn extends React.Component{
                     <input type='password' id='password' placeholder='Password'></input>
                     <br/>
                     <input type='submit'></input>
+                    <br/>
+                    {this.state.errors}
                 </form>
             </div>
         )

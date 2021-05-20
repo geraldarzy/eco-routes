@@ -2,6 +2,14 @@ import React from 'react';
 
 class UserSignUp extends React.Component{
 
+    constructor(props){
+        super(props);
+
+        this.state={
+            errors: []
+        }
+    }
+
     //signIn/Up flow
     //user fills out form, submits form to backend, backend sends token or error
 
@@ -47,6 +55,7 @@ class UserSignUp extends React.Component{
                     <input type='password' id='password' placeholder='Password'></input>
                     <br/>
                     <input type='submit'></input>
+                    {this.state.errors}
                 </form>
             </div>
         )
