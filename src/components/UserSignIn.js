@@ -12,11 +12,9 @@ class UserSignIn extends React.Component{
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label for='email'>Email:</label>
-                    <input type='text' id='email'></input>
+                    <input type='text' id='email' placeholder='Email'></input>
                     <br/>
-                    <label for='email'>Password:</label>
-                    <input type='text' id='password'></input>
+                    <input type='text' id='password' placeholder='Password'></input>
                     <br/>
                     <input type='submit'></input>
                 </form>
