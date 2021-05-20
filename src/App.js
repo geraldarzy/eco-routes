@@ -6,6 +6,8 @@ import CarbonFootprintLogic from './components/CarbonFootprintLogic';
 import {Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Switch, Route, useHistory} from 'react-router-dom';
+import UserSignIn from './components/UserSignIn';
+import UserSignUp from './components/UserSignUp';
 
 function App() {
 
@@ -59,13 +61,13 @@ function App() {
         </Route>
         <Route exact path='/user/sign-up'>
             <div>
-              sign up here
+              <UserSignUp/>
             </div>
         </Route>
 
         <Route exact path='/user/sign-in'>
             <div>
-              sign in here
+              <UserSignIn/>
             </div>
         </Route>
       </Switch>
