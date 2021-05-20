@@ -3,7 +3,7 @@ function reducer(
         oirigin:'',
         destination:'',
         resp:null,
-        current_user:null
+        currentUser:null
     }, action
 ) {
     switch (action.type){
@@ -12,7 +12,8 @@ function reducer(
                 ...state,
                 origin: state.origin,
                 destination: state.destination,
-                resp:action.resp
+                resp:action.resp,
+                currentUser:state.user
             }
         case 'SET_CURRENT_USER':
             return{
@@ -20,7 +21,7 @@ function reducer(
                 origin: state.origin,
                 destination: state.destination,
                 resp:state.resp,
-                current_user:action.user
+                currentUser:action.user
             }
 
         default:
