@@ -38,11 +38,25 @@ function TripBook() {
             setTrips(response.tripbook_trips);
 
         })  
-
-
+        const displayTrips=()=>{
+            return trips.map((trip)=>(
+                <li>
+                    <div>
+                        <p>Trip from {trip.origin} to {trip.destination}:</p>
+                        <ul>
+                            <li>Distance Traveled: {trip.distance}</li>
+                            <li>Carbon Footprint: {parseFloat(trip.trip_co2).toFixed(2)} lbs of CO2 emitted</li>
+                        </ul>
+                    </div>
+                </li>
+            ))
+        }
         return (
             <div>
-
+                <h3>Trips saved:</h3>
+                <ul>
+                    {displayTrips()}
+                </ul>
             </div>
         )
     }
