@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 
 function TripBook() {
     const [currentUser, setCurrentUser] = useState(null);
+    const [error, setError] = useState(null);
 
     const fetchCurrentUser= async ()=>{
         // TODO: check if there'a token for the logged in user
@@ -16,7 +17,6 @@ function TripBook() {
             .then((r) => r.json())
             .then((user) => {
                 // set the user in state
-                console.log({user})
                 setCurrentUser(user);
             });
         }
@@ -28,13 +28,13 @@ function TripBook() {
 
     
     if(currentUser){
-        debugger;
         //if a user is logged in
         //get users tripbook
         fetch(`http://localhost:3000//trip_books/${currentUser.trip_book_id}`).then(resp=>resp.json()).then(response=>{
-            debugger;
-
-        })
+            if(response.message){
+                setError(response.message);
+            }
+        })  
 
 
         return (
