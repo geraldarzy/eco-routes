@@ -31,7 +31,10 @@ function TripBook() {
         debugger;
         //if a user is logged in
         //get users tripbook
-        
+        fetch(`http://localhost:3000//trip_books/${currentUser.trip_book_id}`).then(resp=>resp.json()).then(response=>{
+            debugger;
+
+        })
 
 
         return (
