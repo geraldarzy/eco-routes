@@ -51,12 +51,21 @@ function TripBook() {
                 </li>
             ))
         }
-        return (
+
+        if(trips){
+            return (
+                <div>
+                    <h3>Trips saved:</h3>
+                    <ul>
+                        {displayTrips()}
+                    </ul>
+                </div>
+            )
+        }
+
+        return(
             <div>
-                <h3>Trips saved:</h3>
-                <ul>
-                    {displayTrips()}
-                </ul>
+                {error}
             </div>
         )
     }
