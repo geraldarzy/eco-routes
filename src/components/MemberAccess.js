@@ -1,33 +1,44 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import {setCurrentUser} from '../actions/setCurrentUser';
+import {useEffect, useState} from 'react'
 
-class MemberAccess extends React.Component{
+function MemberAccess(){
 
-    componentDidMount(){
+    const [currentUser, setCurrentUser] = useState(null);
+
+    const fetchCurrentUser= async ()=>{
         // TODO: check if there'a token for the logged in user
         // GET /me
         const token = localStorage.getItem("token");
         if (token) {
-           fetch("http://localhost:3000/me", {
+           await fetch("http://localhost:3000/me", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           })
             .then((r) => r.json())
             .then((user) => {
-              // set the user in state
-              console.log({user})
-              this.props.setCurrentUser(user);
+                // set the user in state
+                console.log({user})
+                setCurrentUser(user);
             });
         }
     }
 
-    addTrip = () =>{
-        console.log('adding trip')
+    useEffect( () => {
+        fetchCurrentUser();
+    }, []);
+
+    const addTrip = () =>{
+        debugger;
+        console.log('adding trip');
+        // /trip_books/:trip_book_id/trips
+        // t.string "origin"
+        // t.string "destination"
+        // t.string "distance"
+        // t.string "trip_co2"
+        // t.integer "trip_book_id"
+        
     }
 
-    render(){
         if(this.props.currentUser){
             return(
                 <div>
@@ -41,24 +52,11 @@ class MemberAccess extends React.Component{
                 <p>Want to keep track of your carbon footprint? Sign In Now!</p>
                 <button>Sign In</button>
             </div>
-            )
-    }
-}
-
-const mapStateToProps=(state)=>{
-    console.log({state})
-    return{
-        currentUser:state.currentUser,
-        state:state
-    }
-}
-const mapDispatchToProps=(dispatch)=>{
-    return{
-        setCurrentUser:(user)=>{
-            dispatch(setCurrentUser(user))
-        }
-    }
+        )
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(MemberAccess);
+
+
+
+export default MemberAccess;
