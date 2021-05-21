@@ -6,7 +6,6 @@ function MemberAccess(){
     const [currentUser, setCurrentUser] = useState(null);
 
     const directionsResponse = useSelector(state=>state.resp);
-    const test = 'hello'
     const fetchCurrentUser= async ()=>{
         // TODO: check if there'a token for the logged in user
         // GET /me
