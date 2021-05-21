@@ -40,6 +40,8 @@ class UserSignUp extends React.Component{
               this.props.setCurrentUser(user);
               this.props.history.push("/");
             }
+          }).catch(error=>{
+            this.setState({errors:'Failed.Please try again'})
           });
     }
 
@@ -57,6 +59,7 @@ class UserSignUp extends React.Component{
                     <input type='password' id='password' placeholder='Password'></input>
                     <br/>
                     <input type='submit'></input>
+                    <br/>
                     {this.state.errors}
                 </form>
             </div>
