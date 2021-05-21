@@ -23,12 +23,16 @@ class MemberAccess extends React.Component{
         }
     }
 
+    addTrip = () =>{
+        console.log('adding trip')
+    }
+
     render(){
         if(this.props.currentUser){
             return(
                 <div>
                     <p>Add this trip to your 'Trips' to keep track of your carbon footprint.</p>
-                    <button>Add Trip</button>
+                    <button onClick={this.addTrip} >Add Trip</button>
                 </div>
             )
         }
