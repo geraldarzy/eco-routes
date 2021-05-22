@@ -32,6 +32,8 @@ class UserSignIn extends React.Component{
             if (data.errors) {
               // set errors to show errors in the form
               this.setState({errors:data.errors})
+            } else if (data.error){
+              this.setState({errors:'Invalid password'})
             } else {
               // use the response to set state
               const { user, token } = data;
