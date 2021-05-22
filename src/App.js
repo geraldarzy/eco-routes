@@ -20,7 +20,7 @@ function App() {
         <Route exact path='/trips'>
           <TripBook/>
         </Route>
-        <Route exact path='/trial'>
+        <Route exact path='/map'>
             <Card className='center-items-inside' style={{width:'35rem', height:'80vh',margin:'1rem'}}>
               <Card.Body>
 
