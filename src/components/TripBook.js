@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom';
+import Button from './Button'
 
 function TripBook() {
     const history = useHistory();
@@ -81,7 +82,8 @@ function TripBook() {
     }
     return(
         <div>
-            not logged in
+            To save and access trips, please sign up to continue
+            <Button/>
         </div>
     )
 }
