@@ -9,6 +9,7 @@ import {Switch, Route, useHistory} from 'react-router-dom';
 import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
 import TripBook from './components/TripBook'
+import Button from './components/Button'
 
 function App() {
   const history = useHistory();
@@ -50,15 +51,14 @@ function App() {
             <div >Welcome to Eco-Routes</div>
             <br/>
             <button id='foot-button' onClick={()=>{
-              history.push('/trial')
+              history.push('/map')
             }} style={{background:'none',border:'none'}} ><img src='http://www.clker.com/cliparts/c/u/4/9/j/S/green-footprint-hi.png' style={{height:'auto',width:'50px'}}/>
             </button>
             <br/>
             <label for='foot-button'>Start Now</label>
             <br/>
             <br/>
-            <button onClick={()=>{history.push('/user/sign-up')}}>Sign Up</button>
-            <button onClick={()=>{history.push('/user/sign-in')}}>Log In</button>
+            <Button/>
             
           </div>
         </Route>
