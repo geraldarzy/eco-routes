@@ -5,6 +5,8 @@ function TripBook() {
     const [error, setError] = useState(null);
     const [trips, setTrips] = useState(null);
 
+    let totalCo2 = 0;
+
     const fetchCurrentUser= async ()=>{
         // TODO: check if there'a token for the logged in user
         // GET /me
@@ -25,7 +27,7 @@ function TripBook() {
 
     useEffect( () => {
         fetchCurrentUser();
-      }, []);
+    }, []);
 
     
     if(currentUser){
@@ -39,17 +41,21 @@ function TripBook() {
 
         })  
         const displayTrips=()=>{
-            return trips.map((trip)=>(
+           
+            return trips.map((trip)=>{
+                return (
                 <li>
                     <div>
                         <p>Trip from {trip.origin} to {trip.destination}:</p>
                         <ul>
-                            <li>Distance Traveled: {trip.distance}</li>
+                            <li>Distance Traveled: {(parseFloat(trip.distance)/1609.344).toFixed(2)} miles</li>
                             <li>Carbon Footprint: {parseFloat(trip.trip_co2).toFixed(2)} lbs of CO2 emitted</li>
                         </ul>
+
                     </div>
                 </li>
-            ))
+                )
+            })
         }
 
         if(trips){
