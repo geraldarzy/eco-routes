@@ -36,7 +36,7 @@ function TripBook() {
     if(currentUser){
         //if a user is logged in
         //get users tripbook
-        fetch(`http://localhost:3000//trip_books/${currentUser.trip_book_id}`).then(resp=>resp.json()).then(response=>{
+        fetch(`http://localhost:3000//trip_books/${currentUser.user.trip_book_id}`).then(resp=>resp.json()).then(response=>{
             if(response.message){
                 return setError(response.message);
             }
@@ -77,6 +77,8 @@ function TripBook() {
         return(
             <div>
                 {error}
+                <button onClick={()=>history.push('/map')}>Plan a trip</button>
+                <button onClick={()=>history.push('/')}>Home</button>
             </div>
         )
     }
@@ -84,6 +86,7 @@ function TripBook() {
         <div>
             To save and access trips, please sign up to continue
             <Button/>
+            <button onClick={()=>{history.push('/map')}} >Go to map</button>
         </div>
     )
 }

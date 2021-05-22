@@ -1,7 +1,10 @@
 import {useEffect, useState} from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import  Button  from './Button'
 
 function MemberAccess(){
+    const history = useHistory();
 
     const [currentUser, setCurrentUser] = useState(null);
 
@@ -50,12 +53,12 @@ function MemberAccess(){
             // t.string "distance"
             // t.string "trip_co2"
             // t.integer "trip_book_id"
-            fetch(`http://localhost:3000//trip_books/${currentUser.trip_book_id}/trips`, {
+            fetch(`http://localhost:3000//trip_books/${currentUser.user.trip_book_id}/trips`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ trip_book_id: currentUser.trip_book_id, origin: directionsResponse.waypoints[0].name, destination: directionsResponse.waypoints[1].name, distance: directionsResponse.routes[0].distance, trip_co2: calculateCarbonFootprint(25,directionsResponse.routes[0].distance)}),
+                body: JSON.stringify({ trip_book_id: currentUser.user.trip_book_id, origin: directionsResponse.waypoints[0].name, destination: directionsResponse.waypoints[1].name, distance: directionsResponse.routes[0].distance, trip_co2: calculateCarbonFootprint(25,directionsResponse.routes[0].distance)}),
                 })
             .then(resp=>resp.json()).then(response=>{
                 //do something after adding trip
@@ -65,14 +68,17 @@ function MemberAccess(){
             return(
                 <div>
                     <p>Add this trip to your 'Trips' to keep track of your carbon footprint.</p>
-                    <button onClick={addTrip} >Add Trip</button>
+                    <button onClick={()=>{
+                        addTrip();
+                        history.push('/trips')
+                    }} >Add Trip</button>
                 </div>
             )
     }
         return (
             <div>
                 <p>Want to keep track of your carbon footprint? Sign In Now!</p>
-                <button>Sign In</button>
+                <Button/>
             </div>
         )
 }
