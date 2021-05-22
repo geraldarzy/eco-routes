@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
+import {useHistory} from 'react-router-dom';
 
 function TripBook() {
+    const history = useHistory();
     const [currentUser, setCurrentUser] = useState(null);
     const [error, setError] = useState(null);
     const [trips, setTrips] = useState(null);
@@ -65,6 +67,8 @@ function TripBook() {
                     <ul>
                         {displayTrips()}
                     </ul>
+                    <button onClick={()=>history.push('/map')}>Plan a trip</button>
+                    <button onClick={()=>history.push('/')}>Home</button>
                 </div>
             )
         }
