@@ -12,13 +12,6 @@ class Form extends React.Component{
 
     
     render(){
-        const trial = [
-            {label:'Apple'},
-            {label:'Facebook'},
-            {label:'Mapbox'},
-            {label:'Google'},
-            {label:'Walmart'}
-        ]
         return (
             <div>
                 <input onChange={this.props.handleInputChange} id='origin'type='text' placeholder='Origin'></input>

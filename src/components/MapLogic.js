@@ -12,6 +12,8 @@ class MapLogic extends React.Component{
         this.state={
             origin: '',
             destination: '',
+            originSuggestions:[],
+            destinationSuggestions:[],
             origin_coordinates:'',
             destination_coordinates:''
         }
@@ -25,6 +27,29 @@ class MapLogic extends React.Component{
         }
         
         this.setState( stateObject );
+        this.fetchAutocomplete(e.target.value,e.target.id);
+    }
+
+    fetchAutocomplete=async (text,inputID)=>{
+        let matches = [];
+        if(text){
+            let urlText = text.replace( / /g, '%20' );
+            let url =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + urlText + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+            await fetch(url).then(resp=>resp.json()).then(json=>{
+                if(json.features){
+                    matches = json.features.map(x=>{
+                        return x.place_name
+                    })
+                }
+            });
+            let stateObject = function() {
+                let obj = {};
+                obj[inputID+'Suggestions'] = matches;
+                return obj;
+            }
+            
+            this.setState( stateObject );
+        }
     }
 
 
@@ -73,7 +98,7 @@ class MapLogic extends React.Component{
 
         return(
             <div className='center-items-inside'>
-                <Form handleInputChange={this.handleInputChange}/>
+                <Form handleInputChange={this.handleInputChange} originSuggestions={this.state.originSuggestions} destinationSuggestions={this.state.destinationSuggestions}/>
                 <Button variant='success' onClick={this.handleSubmit}>Submit</Button>
             </div>
         )
