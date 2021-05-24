@@ -16,7 +16,7 @@ function App() {
 
   return (
     
-    <div className="App App-header " style={{color:'white'}}>
+    <div className="App App-header ">
       <Switch>
         <Route exact path='/trips'>
           <TripBook/>
@@ -47,7 +47,7 @@ function App() {
             </Card>
         </Route>
         <Route exact path='/'>
-          <div className='center-items-inside'>
+          <div className='center-items-inside'  style={{color:'white'}}>
             <div >Welcome to Eco-Routes</div>
             <br/>
             <button id='foot-button' onClick={()=>{
