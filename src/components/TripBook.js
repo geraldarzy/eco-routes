@@ -63,7 +63,7 @@ function TripBook() {
 
         if(trips){
             return (
-                <div>
+                <div style={{color:'white'}}>
                     <h3>Trips saved:</h3>
                     <ul>
                         {displayTrips()}
@@ -75,7 +75,7 @@ function TripBook() {
         }
 
         return(
-            <div>
+            <div style={{color:'white'}}>
                 {error}
                 <button onClick={()=>history.push('/map')}>Plan a trip</button>
                 <button onClick={()=>history.push('/')}>Home</button>
@@ -83,7 +83,7 @@ function TripBook() {
         )
     }
     return(
-        <div>
+        <div style={{color:'white'}}>
             To save and access trips, please sign up to continue
             <Button/>
             <button onClick={()=>{history.push('/map')}} >Go to map</button>

@@ -16,7 +16,7 @@ function App() {
 
   return (
     
-    <div className="App App-header ">
+    <div className="App App-header " style={{color:'white'}}>
       <Switch>
         <Route exact path='/trips'>
           <TripBook/>
