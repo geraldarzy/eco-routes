@@ -20,7 +20,7 @@ class AvgPerson extends React.Component{
 
     render(){
         return(
-            <div>
+            <div style={{fontSize:'1rem'}}>
                 Your trip is {this.versusDailyAvgPerson(this.props.tripCo2)}% of an average persons average daily carbon footprint and {this.versusDailyUSPerson(this.props.tripCo2)}% of an American persons average daily carbon footprint.
             </div>
         )

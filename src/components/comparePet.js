@@ -20,7 +20,7 @@ class Pet extends React.Component{
 
     render(){
         return(
-            <div>
+            <div style={{fontSize:'1rem'}}>
                 Your trip is {this.versusDailyDog(this.props.tripCo2)}% of a dogs average daily carbon footprint and {this.versusDailyCat(this.props.tripCo2)}% of a cats average daily carbon footprint.
             </div>
         )
