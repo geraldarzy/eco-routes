@@ -71,7 +71,7 @@ function MemberAccess(){
                     <button onClick={()=>{
                         addTrip();
                         history.push('/trips')
-                    }} >Add Trip</button>
+                    }} >Save to Trip Book</button>
                 </div>
             )
     }
