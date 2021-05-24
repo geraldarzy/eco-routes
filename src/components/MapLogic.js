@@ -12,46 +12,34 @@ class MapLogic extends React.Component{
         this.state={
             origin: '',
             destination: '',
-            originSuggestions:[],
-            destinationSuggestions:[],
             origin_coordinates:'',
             destination_coordinates:''
         }
     }
-    handleInputChange=(e)=>{
-        //handles input change dynamically by producing a new obj with target.id 
-        let stateObject = function() {
-            let obj = {};
-            obj[e.target.id] = e.target.value;
-            return obj;
-        }
-        
-        this.setState( stateObject );
-        this.fetchAutocomplete(e.target.value,e.target.id);
-    }
-
-    fetchAutocomplete=async (text,inputID)=>{
+    
+    loadOptions=(inputValue,callback)=>{
         let matches = [];
-        if(text){
-            let urlText = text.replace( / /g, '%20' );
-            let url =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + urlText + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
-            await fetch(url).then(resp=>resp.json()).then(json=>{
-                if(json.features){
-                    matches = json.features.map(x=>{
-                        return x.place_name
-                    })
-                }
-            });
-            let stateObject = function() {
-                let obj = {};
-                obj[inputID+'Suggestions'] = matches;
-                return obj;
+        let urlText = inputValue.replace( / /g, '%20' );
+        let url =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + urlText + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        fetch(url).then(resp=>resp.json()).then(json=>{
+            if(json.features){
+                matches = json.features.map(x=>{
+                    // console.log(x.center)
+                    return {label:`${x.place_name}`, value:x.center}
+                });
+                callback(matches);
             }
-            
-            this.setState( stateObject );
-        }
+        });
     }
 
+    handleOriginInputChange=(e)=>{
+        this.setState( {origin:e.label} );
+        this.setState( {origin_coordinates:e.value} );
+    }
+    handleDestinationInputChange=(e)=>{
+        this.setState( {destination:e.label} );
+        this.setState( {destination_coordinates:e.value} );
+    }
 
     fetchDirections=()=>{
         //fetching mapbox directions so we need to use the key that is stored in backend
@@ -98,7 +86,7 @@ class MapLogic extends React.Component{
 
         return(
             <div className='center-items-inside'>
-                <Form handleInputChange={this.handleInputChange} originSuggestions={this.state.originSuggestions} destinationSuggestions={this.state.destinationSuggestions}/>
+                <Form handleOriginInputChange={this.handleOriginInputChange} handleDestinationInputChange={this.handleDestinationInputChange} loadOptions={this.loadOptions} originSuggestions={this.state.originSuggestions} destinationSuggestions={this.state.destinationSuggestions}/>
                 <Button variant='success' onClick={this.handleSubmit}>Submit</Button>
             </div>
         )
