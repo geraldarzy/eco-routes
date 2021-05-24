@@ -37,4 +37,15 @@ code {
   }
   .button { color: #fff; background-color: #555; padding: 1em; margin: 1em; position: absolute; right: 1em; top: 1em; border-radius: 0.5em; border-bottom: 2px #222 solid; cursor: pointer; }
 
+  .suggestion{
+    width: auto;
+    cursor: pointer;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .suggestion:hover{
+    background-color: grey;
+  }
+
   

@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import AsyncSelect from 'react-select/async';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Form extends React.Component{
@@ -7,17 +7,22 @@ class Form extends React.Component{
         super();
        
     }
-
-
-
-    
     render(){
         return (
-            <div>
-                <input onChange={this.props.handleInputChange} id='origin'type='text' placeholder='Origin'></input>
-                <br/>
-                <input onChange={this.props.handleInputChange} id='destination'type='text' placeholder='Destination'></input>
-                <br/>
+            <div className="center-items-inside">
+                <AsyncSelect
+                    loadOptions={this.props.loadOptions} 
+                    placeholder='Origin' 
+                    defaultOptions={false} 
+                    onChange={this.props.handleOriginInputChange}
+                />
+
+                <AsyncSelect
+                    loadOptions={this.props.loadOptions} 
+                    placeholder='Destination' 
+                    defaultOptions={false} 
+                    onChange={this.props.handleDestinationInputChange}
+                />
             </div>
         )
     }
