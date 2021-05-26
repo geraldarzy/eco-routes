@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# README Eco-Routes
+Backend <a href='https://github.com/geraldarzy/eco-routes-backend'>repository</a>
+<br>
+Frontend <a href='https://github.com/geraldarzy/eco-routes-frontend'>repository</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<strong>About the Project</strong>
+ <br>
+Eco-Routes is a web-app that is designed to inform users of their carbon-footprint and make them conscious of their effect onto the environment in comparison to other  things. To do that, we first show them the most eco-friendly route (via Car) to their destination. Then we calculate that trips carbon footprint and with that information, we compare your carbon footprint with that of the average person and average pet. The math behind that is that people globally have a carbon-footprint of 21.92 lbs of CO2 per day. We then take your trips carbon footprint and tell you what percent of 21.92 lbs that is. So for example, if your trip emits 10 lbs of CO2 into the environment, that is (10lbs/21.92lbs = 0.456) 46% of the average persons daily carbon footprint. That same math is applied to that of the Average Americans daily carbon-footprint and also to a dogs and cats carbon-footprint (food for pets are manufactured and therefore emit CO2 which allows us to estimate an average pets daily carbon-footprint).
+<br/> <br/>
+Daily Carbon Footprint:
+- Average Person: 21.92 lbs of CO2
+- Average American Person: 32.88 lbs of CO2
+- Average Dog: 4.65 lbs of CO2
+- Average Cat: 1.87 lbs of CO2
+- America as a whole: 39.7 million lbs of CO2
+<br><br>
 
-## Available Scripts
+<strong>Built with:</strong> <br>
 
-In the project directory, you can run:
+<strong>Frontend:</strong>
+- React
+- HTML/CSS
+- Bootstrap
 
-### `yarn start`
+Frontend API's:
+- <a href='https://docs.mapbox.com/api/search/geocoding/'>MapBox Geocoding API</a> (for autocomplete and turning addresses into coordinates)
+- <a href='https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/'>MapBox GL-JS</a> (renders the map and route lines when given a GeoJSON object of coordinates)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<strong>Backend: </strong>
+- Ruby on Rails Framework (Backend API)
+- PostGreSQL Database
+- BCrypt for password salting and hashing
 
-### `yarn test`
+Backend API's:
+- <a href='https://docs.mapbox.com/help/getting-started/directions/'>MapBox Directions API</a> (given two sets of coordinates and returns directions )
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend README
 
-### `yarn build`
+To run the webapp:
+- make a `.env` file and store your MapBox key in there as `REACT_APP_MAPBOX_TOKEN=<token here>`
+- that key will be in charge of fetching the autocomplete feature and also convert the addresses into coordinates that we need in order to get directions
+- the directions are called on the backend server because that API key can cost money if used malicously. 
+- run `npm install` to install and download all the dependencies
+- then `npm start` will start and host the webapp into a local server. By default it will go to port 3000 but if 3000 is in use by the back end, it will prompt you to use a different port.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
 
-### `yarn eject`
+### <strong>Contributing</strong>
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<hr>
+MIT License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Copyright (c) 2021 Gerald Arzola
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
