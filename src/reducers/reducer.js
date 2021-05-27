@@ -3,7 +3,8 @@ function reducer(
         origin:'',
         destination:'',
         resp:null,
-        currentUser:null
+        currentUser:null,
+        trips:[]
     }, action
 ) {
     switch (action.type){
@@ -22,6 +23,15 @@ function reducer(
                 destination: state.destination,
                 resp:state.resp,
                 currentUser:action.user
+            }
+        case 'FETCH_TRIPS':
+            return{
+                ...state,
+                origin: state.origin,
+                destination: state.destination,
+                resp:state.resp,
+                currentUser:state.user,
+                trips:action.trips
             }
 
         default:

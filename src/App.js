@@ -10,6 +10,7 @@ import UserSignIn from './components/UserSignIn';
 import UserSignUp from './components/UserSignUp';
 import TripBook from './components/TripBook'
 import Button from './components/Button'
+import NewButton from './components/newbutton'
 
 function App() {
   const history = useHistory();
@@ -72,6 +73,9 @@ function App() {
             <div>
               <UserSignIn history={history}/>
             </div>
+        </Route>
+        <Route exact path='/showtrips'>
+            <NewButton/>
         </Route>
       </Switch>
     </div>
