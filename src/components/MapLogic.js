@@ -20,7 +20,7 @@ class MapLogic extends React.Component{
     loadOptions=(inputValue,callback)=>{
         let matches = [];
         let urlText = inputValue.replace( / /g, '%20' );
-        let url =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + urlText + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+        let url =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + urlText + `.json?access_token=`+'pk.eyJ1IjoiYXJ6eSIsImEiOiJja29nMHpvMmQwbmh4Mm5wd3FmZHo1cWg0In0.cfrKpHwNtWsOx224hRN25A';
         fetch(url).then(resp=>resp.json()).then(json=>{
             if(json.features){
                 matches = json.features.map(x=>{
@@ -57,7 +57,7 @@ class MapLogic extends React.Component{
           //___________origin_______________________________________
           let origin = this.state.origin.replace( / /g, '%20' );
           //this key is restricted on mapbox website, the key that should be hidden is the key that can fetch directions
-          let originurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + origin + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+          let originurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + origin + `.json?access_token=`+'pk.eyJ1IjoiYXJ6eSIsImEiOiJja29nMHpvMmQwbmh4Mm5wd3FmZHo1cWg0In0.cfrKpHwNtWsOx224hRN25A';
           await fetch(originurl).then(resp=>resp.json()).then(json=>{
               this.setState({
                   origin_coordinates:json.features[0].center
@@ -67,7 +67,7 @@ class MapLogic extends React.Component{
           //___________destination___________________________________
           let destination = this.state.destination.replace( / /g, '%20' );
           //this key is restricted on mapbox website, the key that should be hidden is the key that can fetch directions
-          let destinationurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + destination + `.json?access_token=`+process.env.REACT_APP_MAPBOX_TOKEN;
+          let destinationurl =`https://api.mapbox.com/geocoding/v5/mapbox.places/` + destination + `.json?access_token=`+'pk.eyJ1IjoiYXJ6eSIsImEiOiJja29nMHpvMmQwbmh4Mm5wd3FmZHo1cWg0In0.cfrKpHwNtWsOx224hRN25A';
           await fetch(destinationurl).then(resp=>resp.json()).then(json=>{
               this.setState({
                   destination_coordinates:json.features[0].center
