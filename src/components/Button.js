@@ -10,7 +10,7 @@ function Button() {
         // GET /me
         const token = localStorage.getItem("token");
         if (token) {
-            fetch("http://localhost:3000/me", {
+            fetch("https://rocky-reaches-47507.herokuapp.com/me", {
             headers: {
               Authorization: `Bearer ${token}`,
             },

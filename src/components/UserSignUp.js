@@ -19,7 +19,7 @@ class UserSignUp extends React.Component{
         e.preventDefault();
         let email = e.target.children.email.value;
         let password = e.target.children.password.value;
-        fetch("http://localhost:3000/signup", {
+        fetch("https://rocky-reaches-47507.herokuapp.com/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

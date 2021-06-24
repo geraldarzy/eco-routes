@@ -44,7 +44,7 @@ class MapLogic extends React.Component{
     fetchDirections=()=>{
         //fetching mapbox directions so we need to use the key that is stored in backend
         //get "/origin-destination/:start_long/:start_lat/:end_long/:end_lat"
-        let url = 'http://localhost:3000/origin-destination/' + this.state.origin_coordinates[0].toString().replace('.',';') + '/' + this.state.origin_coordinates[1].toString().replace('.',';') + '/' + this.state.destination_coordinates[0].toString().replace('.',';') + '/' + this.state.destination_coordinates[1].toString().replace('.',';')
+        let url = 'https://rocky-reaches-47507.herokuapp.com/origin-destination/' + this.state.origin_coordinates[0].toString().replace('.',';') + '/' + this.state.origin_coordinates[1].toString().replace('.',';') + '/' + this.state.destination_coordinates[0].toString().replace('.',';') + '/' + this.state.destination_coordinates[1].toString().replace('.',';')
         fetch(url).then(resp=>resp.json()).then(json=>{
             // let geojson_coordinates = json.routes[0].geometry.coordinates;
             //send this JSON to redux store

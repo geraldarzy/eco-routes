@@ -14,7 +14,7 @@ function MemberAccess(){
         // GET /me
         const token = localStorage.getItem("token");
         if (token) {
-           await fetch("http://localhost:3000/me", {
+           await fetch("https://rocky-reaches-47507.herokuapp.com/me", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
