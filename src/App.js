@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import Map from './components/Map'
 import MapLogic from './components/MapLogic';
-import CarbonFootprintLogic from './components/CarbonFootprintLogic';
+import CarbonFootprintLogic from './components/CarbonFootPrintLogic';
 import {Card} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Switch, Route, useHistory} from 'react-router-dom';
